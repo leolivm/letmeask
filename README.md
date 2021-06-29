@@ -37,7 +37,7 @@ $ git clone https://github.com/leolivm/letmeask.git && cd letmeask
 $ yarn
 ```
 
-# Make sure you create a real-time database with these rules on Google Firebase
+Make sure you create a real-time database with these rules on Google Firebase
 
 ```bash
 {
@@ -62,11 +62,11 @@ $ yarn
 }
 ```
 
-# Create an `.env.local` file in the project's root directory
+Create an `.env.local` file in the project's root directory
 
-# Copy the variables from the `.env.example` file and paste into `.env.local`, now fill in the information with the data obtained from firebase
+Copy the variables from the `.env.example` file and paste into `.env.local`, now fill in the information with the data obtained from firebase
 
-# If you are going to emulate with ios, run this command
+Run the project
 ```bash
 $ yarn start
 ```
