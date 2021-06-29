@@ -36,7 +36,7 @@ $ git clone https://github.com/leolivm/letmeask.git && cd letmeask
 # Install the dependencies
 $ yarn
 
-# Make sure you create a real-time database with these rules
+# Make sure you create a real-time database with these rules on Google Firebase
 
 {
   "rules": {
