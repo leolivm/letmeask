@@ -35,9 +35,11 @@ $ git clone https://github.com/leolivm/letmeask.git && cd letmeask
 ```bash
 # Install the dependencies
 $ yarn
+```
 
 # Make sure you create a real-time database with these rules on Google Firebase
 
+```bash
 {
   "rules": {
     "rooms": {
@@ -58,13 +60,14 @@ $ yarn
     }
   }
 }
-
+```
 
 # Create an `.env.local` file in the project's root directory
 
 # Copy the variables from the `.env.example` file and paste into `.env.local`, now fill in the information with the data obtained from firebase
 
 # If you are going to emulate with ios, run this command
+```bash
 $ yarn start
 ```
 
