@@ -1,46 +1,73 @@
-# Getting Started with Create React App
+<h1 align="center">
+  <img alt="letmeask" src=".github/assets/logo.svg" width="420px" /> 
+  <br />
+  <br />
+  Typescript | Firebase
+</h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## :bookmark: About the project
 
-## Available Scripts
+- ReactJS application for the Letmeask project developed at NLW @ Rocketseat.
 
-In the project directory, you can run:
+## 🚀 Technologies
 
-### `yarn start`
+Technologies that I used to develop this web client
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- [ReactJS](https://reactjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [React Router DOM](https://reactrouter.com/web/guides/quick-start)
+- [Node-Sass](https://www.npmjs.com/package/node-sass)
+- [Firebase](https://firebase.google.com/)
+- Environment variables
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## 💻 Getting started
 
-### `yarn test`
+### Requirements
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**Clone the project and access the folder**
 
-### `yarn build`
+```bash
+$ git clone https://github.com/leolivm/letmeask.git && cd letmeask
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+**Follow the steps below**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+# Install the dependencies
+$ yarn
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Make sure you create a real-time database with these rules
 
-### `yarn eject`
+{
+  "rules": {
+    "rooms": {
+      ".read": false,
+      ".write": "auth != null",
+      "$roomId": {
+        ".read": true,
+        ".write": "auth != null && (!data.exists() || data.child('authorId').val() == auth.id)",
+        "questions": {
+          ".read": true,
+          ".write": "auth != null && (!data.exists() || data.parent().child('authorId').val() == auth.id)",
+          "likes": {
+            ".read": true,
+            ".write": "auth != null && (!data.exists() || data.child('authorId').val() == auth.id)"
+          }
+        }
+      }
+    }
+  }
+}
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# Create an `.env.local` file in the project's root directory
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+# Copy the variables from the `.env.example` file and paste into `.env.local`, now fill in the information with the data obtained from firebase
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+# If you are going to emulate with ios, run this command
+$ yarn start
+```
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Made with 💜 by Leandro Martins 👋 [See my linkedin](https://www.linkedin.com/in/leandro-martins-0640921a4/)
